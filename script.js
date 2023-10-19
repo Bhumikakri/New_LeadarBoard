@@ -60,37 +60,41 @@ submiteButton.addEventListener("click",(e) => {
 
 })
 
-
 function buttonsEvents(){
     let containersBtn = document.querySelectorAll(".buttons");
     containersBtn.forEach((elements)=>{
         // console.log(elements);
-        elements.addEventListener("click",(e)=>{
-            let contents = e.target.textContent;
-            // console.log(contents.length);
-            let playerScores = e.target.parentElement.parentElement.children[2];
-            // console.log(playerScores.innerText);
-
-            if(contents.length > 2) return;
-
-            if(contents === '🗑')
-            return e.target.parentElement.parentElement.remove();
-
-            // else if(contents == '+5'){
-            //     playerScores.innerText = parseInt(playerScores.innerText) + 5;
-
-            // }else{
-            //     playerScores.innerText = parseInt(playerScores.innerText) - 5;
-
-            // }
-
-            playerScores.textContent = parseInt(playerScores.textContent) + parseInt(contents);
-            sortTable(Arrays);
-
-        })
-
+        elements.addEventListener("click",xyz);
+        sortTable(Arrays);
     })
 }
+
+function xyz(event){
+    let contents = event.target.textContent;
+            // console.log(contents);
+            let playerScores = event.target.parentElement.parentElement.children[2];
+            console.log(playerScores.innerText);
+
+            // if(contents.length > 2) return;
+
+            if(contents === '🗑')
+            event.target.parentElement.parentElement.remove();
+
+            else if(contents == '+5'){
+                playerScores.innerText = parseInt(playerScores.innerText) + 5;
+
+            }else{
+                playerScores.innerText = parseInt(playerScores.innerText) - 5;
+
+            }
+
+
+            // playerScores.textContent = parseInt(playerScores.textContent) + parseInt(contents);
+
+            
+}
+
+
 
 for(let i=0; i < allDatas.length;i++){
     // allData[i]=Arrays[i];
